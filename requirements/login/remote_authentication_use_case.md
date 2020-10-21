@@ -1,8 +1,8 @@
 # Remote Authentication Use Case
 
 ## Caso de sucesso
-1. Sistama valida os dados
-2. Sistema faz requisição para URL da API de login
+1. OK - Sistama valida os dados
+2. OK - Sistema faz requisição para URL da API de login
 3. Sistama valida os dados recebido da API
 4. Sistema entrega os dados da conta de usuário
 
