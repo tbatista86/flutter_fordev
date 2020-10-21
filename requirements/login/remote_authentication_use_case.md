@@ -19,4 +19,4 @@
 1. OK - Sistema retorna uma menssagem de erro inesperado
 
 > ## Credencias inválidas
-1. Sistema retorna uam menssagem de erro informando que as credenciais estão erradas
+1. OK - Sistema retorna uam menssagem de erro informando que as credenciais estão erradas
