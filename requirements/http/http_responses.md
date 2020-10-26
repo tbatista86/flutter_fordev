@@ -11,7 +11,7 @@
 1. OK - Bad Request - 400
 2. OK - Unauthorized - 401
 3. OK - Forbidden - 403
-4. Not Found - 404
+4. OK - Not Found - 404
 5. OK -  Internal server error - 500
 
 > ## Exceção - Status code diferente dos citados acima
