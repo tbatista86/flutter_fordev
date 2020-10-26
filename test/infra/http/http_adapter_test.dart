@@ -42,6 +42,9 @@ void main() {
   });
   group('post', () {
     test('Should call post with correc values', () async {
+      when(client.post(any,
+              body: anyNamed('body'), headers: anyNamed('headers')))
+          .thenAnswer((_) async => Response('{"any_key":"any_value"}', 200));
       await sut
           .request(url: url, method: 'post', body: {'any_key': 'any_value'});
 
@@ -56,6 +59,9 @@ void main() {
     });
 
     test('Should call post whitout body', () async {
+      when(client.post(any,
+              body: anyNamed('body'), headers: anyNamed('headers')))
+          .thenAnswer((_) async => Response('{"any_key":"any_value"}', 200));
       await sut.request(url: url, method: 'post');
 
       verify(client.post(
