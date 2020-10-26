@@ -9,7 +9,7 @@
 
 > ## Erros 
 1. OK - Bad Request - 400
-2. Unauthorized - 401
+2. OK - Unauthorized - 401
 3. Forbidden - 403
 4. Not Found - 404
 5. OK -  Internal server error - 500
