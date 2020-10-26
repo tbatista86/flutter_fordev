@@ -4,7 +4,7 @@
 1. OK - Request com verbo http válido (post)
 2. OK - Passar nos headers o content type JSON
 3. OK - Chamar request com body correto
-4. OK - 200 e reposta com dados
+4. OK - OK - 200 e reposta com dados
 5. No content - 204  e resposta sem dados
 
 > ## Erros 
