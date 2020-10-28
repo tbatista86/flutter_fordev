@@ -14,6 +14,6 @@
 11. OK - Desabilitar o campo de login se algum campo for inválido
 12. OK - Exibir loading no inicío da ação de login
 13. OK - Chamar o método de autenticar
-14. Exibir mensagem de erro caso o login falhe
+14. OK - Exibir mensagem de erro caso o login falhe
 15. OK - Esconder loading no fim da ação de login
 16. Fechar streams quando a página for recaregada
