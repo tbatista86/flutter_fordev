@@ -10,8 +10,8 @@
 7. OK - Validar senha quando o usuário digitar no campo
 8. OK - Mostrar mensagem de erro se a senha for inválida
 9. OK - Remover mensagem de erro se a senha for válida
-10. Habilitar o botão de login se todos os campos forem válidos
-11. Desabilitar o campo de login se algum campo for inválido
+10. OK - Habilitar o botão de login se todos os campos forem válidos
+11. OK - Desabilitar o campo de login se algum campo for inválido
 12. Exibir loading no inicío da ação de login
 13. Autenticar usuário com email e senha informados no formulário
 14. Exibir mensagem de erro caso o login falhe
