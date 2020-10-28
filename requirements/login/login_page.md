@@ -12,8 +12,8 @@
 9. OK - Remover mensagem de erro se a senha for válida
 10. OK - Habilitar o botão de login se todos os campos forem válidos
 11. OK - Desabilitar o campo de login se algum campo for inválido
-12. Exibir loading no inicío da ação de login
+12. OK - Exibir loading no inicío da ação de login
 13. OK - Chamar o método de autenticar
 14. Exibir mensagem de erro caso o login falhe
-15. Esconder loading no fim da ação de login
+15. OK - Esconder loading no fim da ação de login
 16. Fechar streams quando a página for recaregada
