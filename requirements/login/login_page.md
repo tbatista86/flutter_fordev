@@ -13,8 +13,7 @@
 10. OK - Habilitar o botão de login se todos os campos forem válidos
 11. OK - Desabilitar o campo de login se algum campo for inválido
 12. Exibir loading no inicío da ação de login
-13. Autenticar usuário com email e senha informados no formulário
+13. OK - Chamar o método de autenticar
 14. Exibir mensagem de erro caso o login falhe
-15. gravar o token do usuário em cache para mantê-lo conectado
-16. Redirecionar o usuário para lista de enquetes 
-17. Esconder loading no fim da ação de login
+15. Esconder loading no fim da ação de login
+16. Fechar streams quando a página for recaregada
