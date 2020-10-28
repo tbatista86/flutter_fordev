@@ -1,8 +1,8 @@
 # Login Page
 
 > ## Regras
-1. Os campos devem começar sem exibir mensagem de erro
-2. o botão de fazer login deve começar desabilitado
+1. OK - Os campos devem começar sem exibir mensagem de erro
+2. OK - o botão de fazer login deve começar desabilitado
 3. Após digitar algo em um campo, a mensagem de erro só deve sumir se o campo for válido
 4. Valida o email quando u usuário digitar no campo
 5. Mostrar mensagem de erro se o email for inválido
