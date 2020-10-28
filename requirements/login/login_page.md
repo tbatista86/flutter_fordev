@@ -8,7 +8,7 @@
 5. OK - Mostrar mensagem de erro se o email for inválido
 6. OK - Remover mensagem de erro se o email for válido
 7. OK - Validar senha quando o usuário digitar no campo
-8. Mostrar mensagem de erro se a senha for inválida
+8. OK - Mostrar mensagem de erro se a senha for inválida
 9. Remover mensagem de erro se a senha for válida
 10. Habilitar o botão de login se todos os campos forem válidos
 11. Desabilitar o campo de login se algum campo for inválido
