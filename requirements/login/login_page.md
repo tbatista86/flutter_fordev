@@ -16,4 +16,4 @@
 13. OK - Chamar o método de autenticar
 14. OK - Exibir mensagem de erro caso o login falhe
 15. OK - Esconder loading no fim da ação de login
-16. Fechar streams quando a página for recaregada
+16. OK - Fechar streams quando a página for recaregada
