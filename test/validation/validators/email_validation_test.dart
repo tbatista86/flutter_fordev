@@ -1,4 +1,5 @@
 import 'package:test/test.dart';
+
 import 'package:fordev/validation/protocols/protocols.dart';
 
 class EmailValidation implements FieldValidation {
@@ -7,7 +8,11 @@ class EmailValidation implements FieldValidation {
   EmailValidation(this.field);
 
   String validate(String value) {
-    return null;
+    final regex = RegExp(
+        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+    final isValid = value?.isNotEmpty != true || regex.hasMatch(value);
+
+    return isValid ? null : 'Campo inválido.';
   }
 }
 
@@ -27,5 +32,9 @@ void main() {
 
   test('Shoul return null if email is valid', () {
     expect(sut.validate('tiago@devel.com'), null);
+  });
+
+  test('Shoul return error if email is invalid', () {
+    expect(sut.validate('tiago.devel'), 'Campo inválido.');
   });
 }
