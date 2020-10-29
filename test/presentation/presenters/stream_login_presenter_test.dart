@@ -1,4 +1,6 @@
 import 'package:faker/faker.dart';
+import 'package:flutter_launcher_icons/constants.dart';
+import 'package:fordev/domain/helpers/helpers.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
@@ -32,6 +34,10 @@ void main() {
   void mockAuthenctication() {
     mockAuthencticationCall()
         .thenAnswer((_) async => AccountEntity(faker.guid.guid()));
+  }
+
+  void mockAuthencticationError(DomainError error) {
+    mockAuthencticationCall().thenThrow(error);
   }
 
   setUp(() {
@@ -141,6 +147,19 @@ void main() {
     sut.validatePassword(password);
 
     expectLater(sut.isLoadingStream, emitsInOrder([true, false]));
+
+    await sut.auth();
+  });
+
+  test('Should emit correct events on InvalidCredentialsError', () async {
+    mockAuthencticationError(DomainError.invalidCredentials);
+    sut.validateEmail(email);
+    sut.validatePassword(password);
+
+    expectLater(sut.isLoadingStream, emits(false));
+
+    sut.mainErrorStream.listen(
+        expectAsync1((error) => expect(error, 'Credencias inválidas.')));
 
     await sut.auth();
   });
