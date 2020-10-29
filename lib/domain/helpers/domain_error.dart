@@ -9,7 +9,7 @@ extension DomainErrorExtension on DomainError {
       case DomainError.invalidCredentials:
         return 'Credencias inválidas.';
       default:
-        return '';
+        return 'Algo errado aconteceu. Tente novamente em breve.';
     }
   }
 }
