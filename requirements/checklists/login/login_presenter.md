@@ -6,7 +6,7 @@
 3. OK - Notificar o emailErrorStream com null, caso o Validation não retorne erro
 4. OK - Não notificar o emailErrorStream se o valor for igual ao último
 5. OK - Notificar o isFormValidation após alterar o email
-6. Chamar o validation ao alterar a senha
+6. OK - Chamar o validation ao alterar a senha
 7. Notificar o passwordErrorStream com o mesmo erro do validation, caso retorne erro
 8. Notificar o passwordErrorStream com null, caso o validation não retorne erro
 9. Não notificar o passwordErroStream se o valor for igual ao último
