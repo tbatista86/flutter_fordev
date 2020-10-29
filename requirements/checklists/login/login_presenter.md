@@ -13,7 +13,7 @@
 10. OK - Notificar o isFormvalidation após alterar a senha
 11. OK - Para o formulário esta válido todos os Streams de erro precisam estar null e todos os campos obrigátorios não podem estar vazio
 12. OK - Não notificar o isFormValidStream se o valor for igual ao último
-13. Chamar o Authentication com email e senha corretos
+13. OK - Chamar o Authentication com email e senha corretos
 14. Notificar o isLoadingStream como true antes de chamar o Authentication
 15. Notificar o isLoadingStream como false no fim do Authentication 
 16. Notificar o mainErrorStream caso o Authentication retorne um DomaiError
