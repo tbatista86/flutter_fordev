@@ -7,10 +7,10 @@
 4. OK - Não notificar o emailErrorStream se o valor for igual ao último
 5. OK - Notificar o isFormValidation após alterar o email
 6. OK - Chamar o validation ao alterar a senha
-7. Notificar o passwordErrorStream com o mesmo erro do validation, caso retorne erro
-8. Notificar o passwordErrorStream com null, caso o validation não retorne erro
-9. Não notificar o passwordErroStream se o valor for igual ao último
-10. Notificar o isFormvalidation após alterar a senha
+7. OK - Notificar o passwordErrorStream com o mesmo erro do validation, caso retorne erro
+8. OK - Notificar o passwordErrorStream com null, caso o validation não retorne erro
+9. OK - Não notificar o passwordErroStream se o valor for igual ao último
+10. OK - Notificar o isFormvalidation após alterar a senha
 11. Para o formulário esta válido todos os Streams de erro precisam estar null e todos os campos obrigátorios não podem estar vazio
 12. OK - Não notificar o isFormValidStream se o valor for igual ao último
 13. Chamar o Authentication com email e senha corretos
