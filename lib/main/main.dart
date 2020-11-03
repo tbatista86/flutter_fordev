@@ -22,9 +22,7 @@ class App extends StatelessWidget {
         GetPage(name: '/login', page: makeLoginPage),
         GetPage(
           name: '/surveys',
-          page: () => Scaffold(
-            body: Text('Enquetes'),
-          ),
+          page: () => Scaffold(body: Text('Enquetes')),
         ),
       ],
     );
