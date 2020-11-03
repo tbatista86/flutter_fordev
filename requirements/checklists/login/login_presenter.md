@@ -20,4 +20,4 @@
 17. OK - Fechar todos os Streams no dispose
 18. OK - Gravar o Account no cache em caso de sucesso
 19. OK - Notificar o mainErrorStream caso o SaveSecureAccount retorne erro
-20. Levar ousuário para a tela de Enquetes em caso de sucesso
+20. OK - Levar ousuário para a tela de Enquetes em caso de sucesso

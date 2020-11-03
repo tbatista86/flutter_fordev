@@ -18,6 +18,7 @@ class GetxLoginPresenter extends GetxController implements LoginPresenter {
   var emailError = RxString();
   var passwordError = RxString();
   var mainError = RxString();
+  var navigateTo = RxString();
   var isFormValid = false.obs;
   var isLoading = false.obs;
 
@@ -53,6 +54,7 @@ class GetxLoginPresenter extends GetxController implements LoginPresenter {
       final account = await authentication
           .auth(AuthenticationParams(email: _email, secret: _password));
       await saveCurrentAccount.save(account);
+      navigateTo.value = '/surveys';
     } on DomainError catch (error) {
       mainError.value = error.description;
       isLoading.value = false;
