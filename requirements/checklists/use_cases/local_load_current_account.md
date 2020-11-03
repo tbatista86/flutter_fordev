@@ -5,4 +5,4 @@
 2. OK - Sistema retorna os dados da conta do usuário
 
 > ## Exceção - Falha ao carregar dados do cahe
-1. Sistema retorna um mensagem de erro inesperado 
+1. OK - Sistema retorna um mensagem de erro inesperado 
