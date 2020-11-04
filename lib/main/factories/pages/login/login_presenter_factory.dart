@@ -1,5 +1,6 @@
 import '../../../../presentation/presenters/presenters.dart';
-import '../../../../ui/pages/pages.dart';
+import '../../../../ui/pages/login/login.dart';
+
 import '../../factories.dart';
 
 LoginPresenter makeGetxLoginPresenter() {

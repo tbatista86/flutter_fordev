@@ -3,7 +3,7 @@ import 'package:fordev/ui/pages/pages.dart';
 import 'package:get/get.dart';
 
 import '../../factories.dart';
-import '../../../../ui/pages/login/login_page.dart';
+import '../../../../ui/pages/login/login.dart';
 
 Widget makeLoginPage() {
   final presenter = Get.put<LoginPresenter>(makeGetxLoginPresenter());
