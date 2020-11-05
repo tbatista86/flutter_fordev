@@ -1,12 +1,12 @@
-import 'package:get/get.dart';
+import '../../helpers/errors/ui_error.dart';
 
 abstract class LoginPresenter {
-  RxString get emailError;
-  RxString get passwordError;
-  RxString get mainError;
-  RxString get navigateTo;
-  RxBool get isFormValid;
-  RxBool get isLoading;
+  Stream<UiError> get emailErrorStream;
+  Stream<UiError> get passwordErrorStream;
+  Stream<UiError> get mainErrorStream;
+  Stream<String> get navigateToStream;
+  Stream<bool> get isFormValidStream;
+  Stream<bool> get isLoadingStream;
 
   void validateEmail(String email);
   void validatePassword(String password);

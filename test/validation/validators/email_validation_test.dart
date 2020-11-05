@@ -1,5 +1,6 @@
 import 'package:test/test.dart';
 
+import 'package:fordev/presentation/protocols/protocols.dart';
 import 'package:fordev/validation/validators/validators.dart';
 
 void main() {
@@ -21,6 +22,6 @@ void main() {
   });
 
   test('Shoul return error if email is invalid', () {
-    expect(sut.validate('tiago.devel'), 'Campo inválido.');
+    expect(sut.validate('tiago.devel'), ValidationError.invalidField);
   });
 }
