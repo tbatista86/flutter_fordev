@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
-import './components/components.dart';
-import './login_presenter.dart';
+import '../../../ui/helpers/errors/errors.dart';
 import '../../components/component.dart';
+import 'components/components.dart';
+import 'login_presenter.dart';
 
 class LoginPage extends StatelessWidget {
   final LoginPresenter presenter;
@@ -13,14 +15,16 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void _hideKeyboard() {
-      final currentFocus = FocusScope.of(context);
-      if (!currentFocus.hasPrimaryFocus) currentFocus.unfocus();
+      final currectFocus = FocusScope.of(context);
+      if (!currectFocus.hasPrimaryFocus) {
+        currectFocus.unfocus();
+      }
     }
 
     return Scaffold(
       body: Builder(
         builder: (context) {
-          presenter.isLoading.listen((isLoading) {
+          presenter.isLoadingStream.listen((isLoading) {
             if (isLoading) {
               showLoading(context);
             } else {
@@ -28,13 +32,13 @@ class LoginPage extends StatelessWidget {
             }
           });
 
-          presenter.mainError.listen((error) {
+          presenter.mainErrorStream.listen((error) {
             if (error != null) {
-              showErrorMessage(context, error);
+              showErrorMessage(context, error.description);
             }
           });
 
-          presenter.navigateTo.listen((page) {
+          presenter.navigateToStream.listen((page) {
             if (page?.isNotEmpty == true) {
               Get.offAllNamed(page);
             }
@@ -47,26 +51,26 @@ class LoginPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   LoginHeader(),
-                  HeadLine1(
-                    text: 'Login',
-                  ),
+                  HeadLine1(text: 'Login'),
                   Padding(
                     padding: EdgeInsets.all(32),
-                    child: Form(
-                      child: Column(
-                        children: [
-                          EmailInput(),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8, bottom: 32),
-                            child: PassworInput(),
-                          ),
-                          LoginButton(),
-                          FlatButton.icon(
-                            onPressed: () {},
-                            icon: Icon(Icons.person),
-                            label: Text('Criar conta'),
-                          ),
-                        ],
+                    child: Provider(
+                      create: (_) => presenter,
+                      child: Form(
+                        child: Column(
+                          children: <Widget>[
+                            EmailInput(),
+                            Padding(
+                              padding: EdgeInsets.only(top: 8, bottom: 32),
+                              child: PasswordInput(),
+                            ),
+                            LoginButton(),
+                            FlatButton.icon(
+                                onPressed: () {},
+                                icon: Icon(Icons.person),
+                                label: Text('Criar conta'))
+                          ],
+                        ),
                       ),
                     ),
                   )
