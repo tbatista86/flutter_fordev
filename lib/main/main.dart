@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
 import './factories/factories.dart';
 import '../ui/components/component.dart';
 
@@ -17,13 +18,15 @@ class App extends StatelessWidget {
       title: '4dev',
       debugShowCheckedModeBanner: false,
       theme: makeAppTheme(),
-      initialRoute: '/login',
+      initialRoute: '/',
       getPages: [
-        GetPage(name: '/login', page: makeLoginPage),
+        GetPage(name: '/', page: makeSplashPage, transition: Transition.fade),
         GetPage(
-          name: '/surveys',
-          page: () => Scaffold(body: Text('Enquetes')),
-        ),
+            name: '/login', page: makeLoginPage, transition: Transition.fadeIn),
+        GetPage(
+            name: '/surveys',
+            page: () => Scaffold(body: Text('Enquetes')),
+            transition: Transition.fadeIn),
       ],
     );
   }
