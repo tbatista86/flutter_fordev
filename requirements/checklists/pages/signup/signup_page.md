@@ -18,8 +18,8 @@
 15. OK - Remover mensagem de erro se a confirmação de senha for válida
 16. OK - Habilitar o botão de criar conta se todos os campos forem válidos
 17. OK - Desabilitar o botão de criar conta se algum campo for inválido
-18. Exibir loading no início da ação de criar conta
+18. OK - Exibir loading no início da ação de criar conta
 19. OK - Chamar o método de criar conta
 20. Exibir mensagem de erro caso a criação de conta falhe
-21. Esconder o loading no fim da ação de criar conta
+21. OK - Esconder o loading no fim da ação de criar conta
 22. OK - Fechar streams quando a página for encerrada
