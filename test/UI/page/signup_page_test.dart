@@ -14,6 +14,7 @@ class SignUpPresenterSpy extends Mock implements SignUpPresenter {}
 SignUpPresenter presenter;
 StreamController<UiError> nameErrorController;
 StreamController<UiError> emailErrorController;
+StreamController<UiError> mainErrorController;
 StreamController<UiError> passwordErrorController;
 StreamController<UiError> passwordConfirmationErrorController;
 StreamController<bool> isFormValidController;
@@ -22,6 +23,7 @@ StreamController<bool> isLoadingController;
 void initStreams() {
   nameErrorController = StreamController<UiError>();
   emailErrorController = StreamController<UiError>();
+  mainErrorController = StreamController<UiError>();
   passwordErrorController = StreamController<UiError>();
   passwordConfirmationErrorController = StreamController<UiError>();
   isFormValidController = StreamController<bool>();
@@ -32,6 +34,7 @@ void mockStreams() {
   when(presenter.nameErrorStream).thenAnswer((_) => nameErrorController.stream);
   when(presenter.emailErrorStream)
       .thenAnswer((_) => emailErrorController.stream);
+  when(presenter.mainErrorStream).thenAnswer((_) => mainErrorController.stream);
   when(presenter.passwordErrorStream)
       .thenAnswer((_) => passwordErrorController.stream);
   when(presenter.passwordConfirmationErrorStream)
@@ -49,6 +52,7 @@ void closeStreams() {
   passwordConfirmationErrorController.close();
   isFormValidController.close();
   isLoadingController.close();
+  mainErrorController.close();
 }
 
 void main() {
@@ -273,5 +277,26 @@ void main() {
     await tester.pump();
 
     expect(find.byType(CircularProgressIndicator), findsNothing);
+  });
+
+  testWidgets('Should present error message if signUp fail',
+      (WidgetTester tester) async {
+    await loadPage(tester);
+
+    mainErrorController.add(UiError.emailInUse);
+    await tester.pump();
+
+    expect(find.text('O email já está em uso.'), findsOneWidget);
+  });
+
+  testWidgets('Should present error message if signUp throws',
+      (WidgetTester tester) async {
+    await loadPage(tester);
+
+    mainErrorController.add(UiError.unexpected);
+    await tester.pump();
+
+    expect(find.text('Algo errado aconteceu. Tente novamente em breve.'),
+        findsOneWidget);
   });
 }

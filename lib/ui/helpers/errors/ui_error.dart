@@ -5,6 +5,7 @@ enum UiError {
   invalidField,
   unexpected,
   invalidCredentials,
+  emailInUse,
 }
 
 extension UiErrorExtension on UiError {
@@ -16,6 +17,8 @@ extension UiErrorExtension on UiError {
         return R.string.msgInvalidField;
       case UiError.invalidCredentials:
         return R.string.msgInvalidCredential;
+      case UiError.emailInUse:
+        return R.string.msgEmailInUse;
       default:
         return R.string.msgDefaultError;
     }

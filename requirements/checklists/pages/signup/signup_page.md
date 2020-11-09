@@ -20,6 +20,6 @@
 17. OK - Desabilitar o botão de criar conta se algum campo for inválido
 18. OK - Exibir loading no início da ação de criar conta
 19. OK - Chamar o método de criar conta
-20. Exibir mensagem de erro caso a criação de conta falhe
+20. OK - Exibir mensagem de erro caso a criação de conta falhe
 21. OK - Esconder o loading no fim da ação de criar conta
 22. OK - Fechar streams quando a página for encerrada

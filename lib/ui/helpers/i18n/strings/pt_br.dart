@@ -6,6 +6,7 @@ class PtBr implements Translation {
   String get msgInvalidCredential => 'Credencias inválidas.';
   String get msgDefaultError =>
       'Algo errado aconteceu. Tente novamente em breve.';
+  String get msgEmailInUse => 'O email já está em uso.';
   String get addAccount => 'Criar Conta';
   String get confirmPassword => 'Confirmar senha';
   String get email => 'Email';
