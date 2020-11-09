@@ -3,10 +3,10 @@
 > ## Regras
 1. OK - Os campos devem começar sem exibir mensagem de erro
 2. OK - O botão de criar conta deve começar desabilitado
-3. Após digitar algo em um campo, a mensagem de erro só deve sumir se o campo for válido
+3. OK - Após digitar algo em um campo, a mensagem de erro só deve sumir se o campo for válido
 4. OK - Validar email quando o usuário digitar no campo
-5. Mostrar mensagem de erro se o email for inválido
-6. Remover mensagem de erro se o email for válido 
+5. OK - Mostrar mensagem de erro se o email for inválido
+6. OK - Remover mensagem de erro se o email for válido 
 7. OK - Validar senha quando o usuário digitar no campo
 8. Mostrar mensagem de erro se a senha for inválida
 9. Remover mensagem de erro se a senha for válida
