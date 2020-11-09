@@ -13,7 +13,7 @@
 1. OK - SIstema retorna uma mensagem de erro inesperado
 
 > ## Exceção - Resposta inválida
-1. Sistema retorna uma mensagem de erro inesperado
+1. OK - Sistema retorna uma mensagem de erro inesperado
 
 > ## Exceção - Falha do Servidor
 1. OK - Sistema retorna uma mensagem de erro inesperado
