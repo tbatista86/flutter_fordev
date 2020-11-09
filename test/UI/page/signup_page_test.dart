@@ -165,7 +165,7 @@ void main() {
     );
   });
 
-  testWidgets('Should present name error', (WidgetTester tester) async {
+  testWidgets('Should present password error', (WidgetTester tester) async {
     await loadPage(tester);
 
     passwordErrorController.add(UiError.invalidField);
@@ -181,6 +181,28 @@ void main() {
     expect(
       find.descendant(
           of: find.bySemanticsLabel('Senha'), matching: find.byType(Text)),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('Should present passwordConfirm error',
+      (WidgetTester tester) async {
+    await loadPage(tester);
+
+    passwordConfirmationErrorController.add(UiError.invalidField);
+    await tester.pump();
+    expect(find.text('Campo inválido.'), findsOneWidget);
+
+    passwordConfirmationErrorController.add(UiError.requireField);
+    await tester.pump();
+    expect(find.text('Campo obrigatório.'), findsOneWidget);
+
+    passwordConfirmationErrorController.add(null);
+    await tester.pump();
+    expect(
+      find.descendant(
+          of: find.bySemanticsLabel('Confirmar senha'),
+          matching: find.byType(Text)),
       findsOneWidget,
     );
   });
