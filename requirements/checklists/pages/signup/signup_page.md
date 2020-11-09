@@ -8,8 +8,8 @@
 5. OK - Mostrar mensagem de erro se o email for inválido
 6. OK - Remover mensagem de erro se o email for válido 
 7. OK - Validar senha quando o usuário digitar no campo
-8. Mostrar mensagem de erro se a senha for inválida
-9. Remover mensagem de erro se a senha for válida
+8. OK - Mostrar mensagem de erro se a senha for inválida
+9. OK - Remover mensagem de erro se a senha for válida
 10. OK -  Validar nome quando usuário digitar no campo
 11. OK - Mostrar mensagem de erro se o nome for inválido
 12. OK - Remover mensagem de erro se o nome for válido
