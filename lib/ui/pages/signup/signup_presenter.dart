@@ -8,6 +8,7 @@ abstract class SignUpPresenter {
   Stream<UiError> get passwordConfirmationErrorStream;
   Stream<bool> get isFormValidControllerStream;
   Stream<bool> get isLoadingControllerStream;
+  Stream<String> get navigateStream;
 
   void validateName(String name);
   void validateEmail(String email);
