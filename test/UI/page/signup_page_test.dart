@@ -164,4 +164,24 @@ void main() {
       findsOneWidget,
     );
   });
+
+  testWidgets('Should present name error', (WidgetTester tester) async {
+    await loadPage(tester);
+
+    passwordErrorController.add(UiError.invalidField);
+    await tester.pump();
+    expect(find.text('Campo inválido.'), findsOneWidget);
+
+    passwordErrorController.add(UiError.requireField);
+    await tester.pump();
+    expect(find.text('Campo obrigatório.'), findsOneWidget);
+
+    passwordErrorController.add(null);
+    await tester.pump();
+    expect(
+      find.descendant(
+          of: find.bySemanticsLabel('Senha'), matching: find.byType(Text)),
+      findsOneWidget,
+    );
+  });
 }
