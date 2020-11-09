@@ -4,8 +4,10 @@ abstract class Translation {
   String get msgInvalidCredential;
   String get msgDefaultError;
   String get addAccount;
+  String get confirmPassword;
   String get email;
   String get enter;
   String get login;
+  String get name;
   String get password;
 }
