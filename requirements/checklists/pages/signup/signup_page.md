@@ -16,8 +16,8 @@
 13. OK - Validar confirmação de senha quando o usuário digitar no campo
 14. OK - Mostrar mensagem de erro se a confirmação de senha for inválida
 15. OK - Remover mensagem de erro se a confirmação de senha for válida
-16. Habilitar o botão de criar conta se todos os campos forem válidos
-17. Desabilitar o botão de criar conta se algum campo for inválido
+16. OK - Habilitar o botão de criar conta se todos os campos forem válidos
+17. OK - Desabilitar o botão de criar conta se algum campo for inválido
 18. Exibir loading no início da ação de criar conta
 19. Chamar o método de criar conta
 20. Exibir mensagem de erro caso a criação de conta falhe
