@@ -26,9 +26,9 @@
 23. OK - Chamar o AddAcount com os valores corretos
 24. OK - Notificar o isLoadingStream como true antes de chamar o AddAccount
 25. OK - Notificar o isLoadingStream como false no fim do AddAccount
-26. Notificar o mainErrorStream caso o AddAccount retorne erro
+26. OK - Notificar o mainErrorStream caso o AddAccount retorne erro
 27. OK - Fechar todos os Streams no dispose
 28. OK - Gravar o account no cache em caso de sucesso 
-29. Notificar o mainErrorStream caso o SaveCurrentAccount retorne erro
+29. OK - Notificar o mainErrorStream caso o SaveCurrentAccount retorne erro
 30. Levar o usuário para a tela de enquetes em caso de sucesso
 31. Levar o usuáro para tela de login ao clicar no link voltar para login

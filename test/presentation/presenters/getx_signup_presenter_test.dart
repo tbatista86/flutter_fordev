@@ -50,6 +50,10 @@ void main() {
     mockSaveCurrentAccountCall().thenThrow(DomainError.unexpected);
   }
 
+  void mockAuthencticationError(DomainError error) {
+    mockSaveCurrentAccountCall().thenThrow(error);
+  }
+
   setUp(() {
     validation = ValidationSpy();
     addAccount = AddAccountSpy();
@@ -293,6 +297,36 @@ void main() {
     sut.validatePasswordConfirmation(passwordConfirmation);
 
     expectLater(sut.isLoadingStream, emits(true));
+
+    await sut.signUp();
+  });
+
+  test('Should emit correct events on UnexpectedError', () async {
+    mockAuthencticationError(DomainError.unexpected);
+    sut.validateEmail(email);
+    sut.validateName(name);
+    sut.validatePassword(password);
+    sut.validatePasswordConfirmation(passwordConfirmation);
+
+    expectLater(sut.isLoadingStream, emitsInOrder([true, false]));
+
+    sut.mainErrorStream
+        .listen(expectAsync1((error) => expect(error, UiError.unexpected)));
+
+    await sut.signUp();
+  });
+
+  test('Should emit correct events on EmailInUse', () async {
+    mockAuthencticationError(DomainError.emailInUse);
+    sut.validateEmail(email);
+    sut.validateName(name);
+    sut.validatePassword(password);
+    sut.validatePasswordConfirmation(passwordConfirmation);
+
+    expectLater(sut.isLoadingStream, emitsInOrder([true, false]));
+
+    sut.mainErrorStream
+        .listen(expectAsync1((error) => expect(error, UiError.emailInUse)));
 
     await sut.signUp();
   });
