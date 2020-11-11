@@ -28,7 +28,7 @@
 25. Notificar o isLoadingStream como false no fim do AddAccount
 26. Notificar o mainErrorStream caso o AddAccount retorne erro
 27. Fechar todos os Streams no dispose
-28. Gravar o account no cache em caso de sucesso 
+28. OK - Gravar o account no cache em caso de sucesso 
 29. Notificar o mainErrorStream caso o SaveCurrentAccount retorne erro
 30. Levar o usuário para a tela de enquetes em caso de sucesso
 31. Levar o usuáro para tela de login ao clicar no link voltar para login
