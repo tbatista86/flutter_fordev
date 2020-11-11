@@ -23,7 +23,7 @@
 20. OK - Notificar o isFormValidStream após alterar o confirmar senha
 21. OK - Para o formulário estar válido todos os Streams de serro precisam estar null e todos os campos obrigatórios não podem esta vazios
 22. OK - Não notificar o isFormValidStream se o calor for igual ao último
-23. Chamar o AddAcount com os valores corretos
+23. OK - Chamar o AddAcount com os valores corretos
 24. Notificar o isLoadingStream como true antes de chamar o AddAccount
 25. Notificar o isLoadingStream como false no fim do AddAccount
 26. Notificar o mainErrorStream caso o AddAccount retorne erro
