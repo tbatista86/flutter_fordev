@@ -21,3 +21,4 @@
 18. OK - Gravar o Account no cache em caso de sucesso
 19. OK - Notificar o mainErrorStream caso o SaveSecureAccount retorne erro
 20. OK - Levar ousuário para a tela de Enquetes em caso de sucesso
+21. OK - Levar usuário para tela de Criar Conta ao clicar no link de criar conta

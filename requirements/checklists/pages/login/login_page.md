@@ -17,4 +17,4 @@
 14. OK - Exibir mensagem de erro caso o login falhe
 15. OK - Esconder loading no fim da ação de login
 16. OK - Fechar streams quando a página for recaregada
-17. Chamar o método de criar contas ao clicar no link
+17. OK - Chamar o método de criar contas ao clicar no link
