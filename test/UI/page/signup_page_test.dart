@@ -226,7 +226,6 @@ void main() {
       findsOneWidget,
     );
   });
-<<<<<<< HEAD
 
   testWidgets('Should enable button if form is valid',
       (WidgetTester tester) async {
@@ -327,6 +326,4 @@ void main() {
     await tester.pump();
     expect(Get.currentRoute, '/signup');
   });
-=======
->>>>>>> 0883e1f3d60da7d0986a76d02a68c11231346d17
 }
