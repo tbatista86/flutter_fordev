@@ -6,11 +6,11 @@
 3. OK - Notificar o emailErroStream com null, caso o validation não retorne erro
 4. OK - Não notificar o emailErrorStream se o valor for igual ao útimo
 5. OK - Notificar o isFormValidStream após alterar o email
-6. Chamar o validation ao alterar a senha
-7. Notificar o passwroErrorStream com o mesmo erro do validation, caso retorne erro
-8. Notificar o passwordErrorStream com null, caso o validation não retorne erro
-9. Não notificar o passwordErrorStream se o valor for igual ao do último
-10. Notificar o isFormValidStream após alterar a senha
+6. OK - Chamar o validation ao alterar a senha
+7. OK - Notificar o passwroErrorStream com o mesmo erro do validation, caso retorne erro
+8. OK - Notificar o passwordErrorStream com null, caso o validation não retorne erro
+9. OK - Não notificar o passwordErrorStream se o valor for igual ao do último
+10. OK - Notificar o isFormValidStream após alterar a senha
 11. OK - Chamar o validation no alterar nome
 12. OK - Notificar o nameErrorStream com o mesmo erro do validation, caso retorne erro
 13. OK - Notificar o nameErrorStema com null, caso o validation não retorne erro
