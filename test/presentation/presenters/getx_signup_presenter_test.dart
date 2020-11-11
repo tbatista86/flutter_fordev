@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
 import 'package:fordev/domain/entities/entities.dart';
+import 'package:fordev/domain/helpers/helpers.dart';
 import 'package:fordev/domain/usecases/usecases.dart';
 
 import 'package:fordev/ui/helpers/errors/errors.dart';
@@ -40,6 +41,13 @@ void main() {
 
   void mockAddAccount() {
     mockAddAccountCall().thenAnswer((_) async => AccountEntity(token));
+  }
+
+  PostExpectation mockSaveCurrentAccountCall() =>
+      when(saveCurrentAccount.save(any));
+
+  void mockSaveCurrentAccountError() {
+    mockSaveCurrentAccountCall().thenThrow(DomainError.unexpected);
   }
 
   setUp(() {
@@ -261,5 +269,20 @@ void main() {
     await sut.signUp();
 
     verify(saveCurrentAccount.save(AccountEntity(token))).called(1);
+  });
+  test('Should emit UnexpectedError if SaveCurrentAccount fail', () async {
+    mockSaveCurrentAccountError();
+
+    sut.validateEmail(email);
+    sut.validateName(name);
+    sut.validatePassword(password);
+    sut.validatePasswordConfirmation(passwordConfirmation);
+
+    expectLater(sut.isLoadingStream, emitsInOrder([true, false]));
+
+    sut.mainErrorStream
+        .listen(expectAsync1((error) => expect(error, UiError.unexpected)));
+
+    await sut.signUp();
   });
 }
