@@ -30,5 +30,5 @@
 27. OK - Fechar todos os Streams no dispose
 28. OK - Gravar o account no cache em caso de sucesso 
 29. OK - Notificar o mainErrorStream caso o SaveCurrentAccount retorne erro
-30. Levar o usuário para a tela de enquetes em caso de sucesso
+30. OK - Levar o usuário para a tela de enquetes em caso de sucesso
 31. Levar o usuáro para tela de login ao clicar no link voltar para login
