@@ -11,11 +11,11 @@
 8. Notificar o passwordErrorStream com null, caso o validation não retorne erro
 9. Não notificar o passwordErrorStream se o valor for igual ao do último
 10. Notificar o isFormValidStream após alterar a senha
-11. Chamar o validation no alterar nome
-12. Notificar o nameErrorStream com o mesmo erro do validation, caso retorne erro
-13. Notificar o nameErrorStema com null, caso o validation não retorne erro
-14. Não notificar o nameErrorStream se o valor for igual ao último
-15. Notificar o isFormValidStream após alterar o nome
+11. OK - Chamar o validation no alterar nome
+12. OK - Notificar o nameErrorStream com o mesmo erro do validation, caso retorne erro
+13. OK - Notificar o nameErrorStema com null, caso o validation não retorne erro
+14. OK - Não notificar o nameErrorStream se o valor for igual ao último
+15. OK - Notificar o isFormValidStream após alterar o nome
 16. Chamar o validation no alterar confirmar senha
 17. Notificar o passwordConfirmStream com o mesmo erro do validation, caso retorne erro
 18. Notificar o passwordConfirmStream com null, caso o validation não retorne erro
