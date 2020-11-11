@@ -10,7 +10,7 @@ class SignUpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final presenter = Provider.of<SignUpPresenter>(context);
     return StreamBuilder<Object>(
-      stream: presenter.isFormValidControllerStream,
+      stream: presenter.isFormValidStream,
       builder: (context, snapshot) {
         return RaisedButton(
           onPressed: snapshot.data == true ? presenter.signUp : null,

@@ -1,3 +1,4 @@
+import 'package:fordev/ui/pages/signup/signup_presenter.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 
@@ -7,7 +8,7 @@ import '../../domain/helpers/helpers.dart';
 
 import '../protocols/protocols.dart';
 
-class GetxSignUpPresenter extends GetxController {
+class GetxSignUpPresenter extends GetxController implements SignUpPresenter {
   final Validation validation;
   final AddAccount addAccount;
   final SaveCurrentAccount saveCurrentAccount;
@@ -114,5 +115,9 @@ class GetxSignUpPresenter extends GetxController {
       }
       _isLoading.value = false;
     }
+  }
+
+  void gotoLogin() {
+    _navigateTo.value = '/login';
   }
 }

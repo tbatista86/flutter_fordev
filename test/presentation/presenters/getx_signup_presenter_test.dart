@@ -342,4 +342,9 @@ void main() {
 
     await sut.signUp();
   });
+
+  test('Should go to LoginPage onlink click', () async {
+    sut.navigateToStream.listen(expectAsync1((page) => expect(page, '/login')));
+    sut.gotoLogin();
+  });
 }

@@ -24,7 +24,7 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       body: Builder(
         builder: (context) {
-          presenter.isLoadingControllerStream.listen((isLoading) {
+          presenter.isLoadingStream.listen((isLoading) {
             if (isLoading) {
               showLoading(context);
             } else {
@@ -38,7 +38,7 @@ class SignUpPage extends StatelessWidget {
             }
           });
 
-          presenter.navigateStream.listen((page) {
+          presenter.navigateToStream.listen((page) {
             if (page?.isNotEmpty == true) {
               Get.offAllNamed(page);
             }
@@ -71,7 +71,7 @@ class SignUpPage extends StatelessWidget {
                             ),
                             SignUpButton(),
                             FlatButton.icon(
-                              onPressed: () {},
+                              onPressed: presenter.gotoLogin,
                               icon: Icon(Icons.exit_to_app),
                               label: Text(R.string.login),
                             )

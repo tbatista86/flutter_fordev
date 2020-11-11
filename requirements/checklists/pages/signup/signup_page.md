@@ -23,3 +23,4 @@
 20. OK - Exibir mensagem de erro caso a criação de conta falhe
 21. OK - Esconder o loading no fim da ação de criar conta
 22. OK - Fechar streams quando a página for encerrada
+23. OK - Chamar o método de Login ao clicar no link

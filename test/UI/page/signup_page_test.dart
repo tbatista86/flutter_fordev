@@ -41,11 +41,11 @@ void mockStreams() {
       .thenAnswer((_) => passwordErrorController.stream);
   when(presenter.passwordConfirmationErrorStream)
       .thenAnswer((_) => passwordConfirmationErrorController.stream);
-  when(presenter.isFormValidControllerStream)
+  when(presenter.isFormValidStream)
       .thenAnswer((_) => isFormValidController.stream);
-  when(presenter.isLoadingControllerStream)
-      .thenAnswer((_) => isLoadingController.stream);
-  when(presenter.navigateStream).thenAnswer((_) => navigateToController.stream);
+  when(presenter.isLoadingStream).thenAnswer((_) => isLoadingController.stream);
+  when(presenter.navigateToStream)
+      .thenAnswer((_) => navigateToController.stream);
 }
 
 void closeStreams() {
@@ -325,5 +325,17 @@ void main() {
     navigateToController.add(null);
     await tester.pump();
     expect(Get.currentRoute, '/signup');
+  });
+
+  testWidgets('Should call gotoLogin on link click',
+      (WidgetTester tester) async {
+    await loadPage(tester);
+
+    final button = find.text('Login');
+    await tester.ensureVisible(button);
+    await tester.tap(button);
+    await tester.pump();
+
+    verify(presenter.gotoLogin()).called(1);
   });
 }
