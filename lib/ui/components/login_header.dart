@@ -27,7 +27,7 @@ class LoginHeader extends StatelessWidget {
           bottomLeft: Radius.circular(80),
         ),
       ),
-      child: Image(image: AssetImage('lib/ui/assets/logo.png')),
+      child: Image(image: AssetImage('lib/UI/assets/logo.png')),
     );
   }
 }

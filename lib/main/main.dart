@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import './factories/factories.dart';
-import '../ui/components/component.dart';
+import '../UI/components/component.dart';
 
 void main() {
   runApp(App());

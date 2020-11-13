@@ -6,9 +6,9 @@ import 'package:faker/faker.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:fordev/ui/helpers/errors/errors.dart';
-import 'package:fordev/ui/pages/login/login.dart';
-import 'package:fordev/ui/pages/pages.dart';
+import 'package:fordev/UI/helpers/errors/errors.dart';
+import 'package:fordev/UI/pages/login/login.dart';
+import 'package:fordev/UI/pages/pages.dart';
 
 class LoginPresenterSpy extends Mock implements LoginPresenter {}
 

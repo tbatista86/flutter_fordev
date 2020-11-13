@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 
-import '../../ui/helpers/errors/errors.dart';
-import '../../ui/pages/login/login_presenter.dart';
+import '../../UI/helpers/errors/errors.dart';
+import '../../UI/pages/login/login_presenter.dart';
 
 import '../../domain/helpers/helpers.dart';
 import '../../domain/usecases/usecases.dart';

@@ -2,64 +2,67 @@ import 'dart:async';
 
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:fordev/ui/helpers/helpers.dart';
+import 'package:fordev/UI/helpers/helpers.dart';
 import 'package:get/get.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:fordev/ui/pages/pages.dart';
+import 'package:fordev/UI/pages/pages.dart';
 import 'package:mockito/mockito.dart';
 
 class SignUpPresenterSpy extends Mock implements SignUpPresenter {}
 
-SignUpPresenter presenter;
-StreamController<UiError> nameErrorController;
-StreamController<UiError> emailErrorController;
-StreamController<UiError> mainErrorController;
-StreamController<UiError> passwordErrorController;
-StreamController<UiError> passwordConfirmationErrorController;
-StreamController<bool> isFormValidController;
-StreamController<bool> isLoadingController;
-StreamController<String> navigateToController;
-
-void initStreams() {
-  nameErrorController = StreamController<UiError>();
-  emailErrorController = StreamController<UiError>();
-  mainErrorController = StreamController<UiError>();
-  passwordErrorController = StreamController<UiError>();
-  passwordConfirmationErrorController = StreamController<UiError>();
-  isFormValidController = StreamController<bool>();
-  isLoadingController = StreamController<bool>();
-  navigateToController = StreamController<String>();
-}
-
-void mockStreams() {
-  when(presenter.nameErrorStream).thenAnswer((_) => nameErrorController.stream);
-  when(presenter.emailErrorStream)
-      .thenAnswer((_) => emailErrorController.stream);
-  when(presenter.mainErrorStream).thenAnswer((_) => mainErrorController.stream);
-  when(presenter.passwordErrorStream)
-      .thenAnswer((_) => passwordErrorController.stream);
-  when(presenter.passwordConfirmationErrorStream)
-      .thenAnswer((_) => passwordConfirmationErrorController.stream);
-  when(presenter.isFormValidStream)
-      .thenAnswer((_) => isFormValidController.stream);
-  when(presenter.isLoadingStream).thenAnswer((_) => isLoadingController.stream);
-  when(presenter.navigateToStream)
-      .thenAnswer((_) => navigateToController.stream);
-}
-
-void closeStreams() {
-  nameErrorController.close();
-  emailErrorController.close();
-  passwordErrorController.close();
-  passwordConfirmationErrorController.close();
-  isFormValidController.close();
-  isLoadingController.close();
-  mainErrorController.close();
-  navigateToController.close();
-}
-
 void main() {
+  SignUpPresenter presenter;
+  StreamController<UiError> nameErrorController;
+  StreamController<UiError> emailErrorController;
+  StreamController<UiError> mainErrorController;
+  StreamController<UiError> passwordErrorController;
+  StreamController<UiError> passwordConfirmationErrorController;
+  StreamController<bool> isFormValidController;
+  StreamController<bool> isLoadingController;
+  StreamController<String> navigateToController;
+
+  void initStreams() {
+    nameErrorController = StreamController<UiError>();
+    emailErrorController = StreamController<UiError>();
+    mainErrorController = StreamController<UiError>();
+    passwordErrorController = StreamController<UiError>();
+    passwordConfirmationErrorController = StreamController<UiError>();
+    isFormValidController = StreamController<bool>();
+    isLoadingController = StreamController<bool>();
+    navigateToController = StreamController<String>();
+  }
+
+  void mockStreams() {
+    when(presenter.nameErrorStream)
+        .thenAnswer((_) => nameErrorController.stream);
+    when(presenter.emailErrorStream)
+        .thenAnswer((_) => emailErrorController.stream);
+    when(presenter.mainErrorStream)
+        .thenAnswer((_) => mainErrorController.stream);
+    when(presenter.passwordErrorStream)
+        .thenAnswer((_) => passwordErrorController.stream);
+    when(presenter.passwordConfirmationErrorStream)
+        .thenAnswer((_) => passwordConfirmationErrorController.stream);
+    when(presenter.isFormValidStream)
+        .thenAnswer((_) => isFormValidController.stream);
+    when(presenter.isLoadingStream)
+        .thenAnswer((_) => isLoadingController.stream);
+    when(presenter.navigateToStream)
+        .thenAnswer((_) => navigateToController.stream);
+  }
+
+  void closeStreams() {
+    nameErrorController.close();
+    emailErrorController.close();
+    passwordErrorController.close();
+    passwordConfirmationErrorController.close();
+    isFormValidController.close();
+    isLoadingController.close();
+    mainErrorController.close();
+    navigateToController.close();
+  }
+
   Future<void> loadPage(WidgetTester tester) async {
     presenter = SignUpPresenterSpy();
     initStreams();
