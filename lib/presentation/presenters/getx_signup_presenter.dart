@@ -1,8 +1,8 @@
-import 'package:fordev/UI/pages/signup/signup_presenter.dart';
+import 'package:fordev/ui/pages/signup/signup_presenter.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 
-import '../../UI/helpers/errors/errors.dart';
+import '../../ui/helpers/errors/errors.dart';
 import '../../domain/usecases/usecases.dart';
 import '../../domain/helpers/helpers.dart';
 

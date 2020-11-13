@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:fordev/UI/helpers/helpers.dart';
+import 'package:fordev/ui/helpers/helpers.dart';
 import 'package:get/get.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:fordev/UI/pages/pages.dart';
+import 'package:fordev/ui/pages/pages.dart';
 import 'package:mockito/mockito.dart';
 
 class SignUpPresenterSpy extends Mock implements SignUpPresenter {}

@@ -6,7 +6,7 @@ import 'package:fordev/domain/entities/entities.dart';
 import 'package:fordev/domain/helpers/helpers.dart';
 import 'package:fordev/domain/usecases/usecases.dart';
 
-import 'package:fordev/UI/helpers/errors/errors.dart';
+import 'package:fordev/ui/helpers/errors/errors.dart';
 
 import 'package:fordev/presentation/presenters/presenters.dart';
 import 'package:fordev/presentation/protocols/protocols.dart';
