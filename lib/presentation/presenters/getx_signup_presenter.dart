@@ -13,11 +13,11 @@ class GetxSignUpPresenter extends GetxController implements SignUpPresenter {
   final AddAccount addAccount;
   final SaveCurrentAccount saveCurrentAccount;
 
-  final _emailError = Rx<UiError>();
-  final _nameError = Rx<UiError>();
-  final _passwordError = Rx<UiError>();
-  final _passwordConfirmationError = Rx<UiError>();
-  final _mainError = Rx<UiError>();
+  final _emailError = Rx<UIError>();
+  final _nameError = Rx<UIError>();
+  final _passwordError = Rx<UIError>();
+  final _passwordConfirmationError = Rx<UIError>();
+  final _mainError = Rx<UIError>();
   final _navigateTo = RxString();
   final _isFormValid = false.obs;
   final _isLoading = false.obs;
@@ -27,12 +27,12 @@ class GetxSignUpPresenter extends GetxController implements SignUpPresenter {
   String _password;
   String _passwordConfirmation;
 
-  Stream<UiError> get emailErrorStream => _emailError.stream;
-  Stream<UiError> get passwordErrorStream => _passwordError.stream;
-  Stream<UiError> get passwordConfirmationErrorStream =>
+  Stream<UIError> get emailErrorStream => _emailError.stream;
+  Stream<UIError> get passwordErrorStream => _passwordError.stream;
+  Stream<UIError> get passwordConfirmationErrorStream =>
       _passwordConfirmationError.stream;
-  Stream<UiError> get mainErrorStream => _mainError.stream;
-  Stream<UiError> get nameErrorStream => _nameError.stream;
+  Stream<UIError> get mainErrorStream => _mainError.stream;
+  Stream<UIError> get nameErrorStream => _nameError.stream;
   Stream<String> get navigateToStream => _navigateTo.stream;
   Stream<bool> get isFormValidStream => _isFormValid.stream;
   Stream<bool> get isLoadingStream => _isLoading.stream;
@@ -67,7 +67,7 @@ class GetxSignUpPresenter extends GetxController implements SignUpPresenter {
     _validateForm();
   }
 
-  UiError _validateField(String field) {
+  UIError _validateField(String field) {
     final formData = {
       'name': _name,
       'email': _email,
@@ -78,9 +78,9 @@ class GetxSignUpPresenter extends GetxController implements SignUpPresenter {
     final error = validation.validate(field: field, input: formData);
     switch (error) {
       case ValidationError.invalidField:
-        return UiError.invalidField;
+        return UIError.invalidField;
       case ValidationError.requiredField:
-        return UiError.requireField;
+        return UIError.requireField;
       default:
         return null;
     }
@@ -111,13 +111,13 @@ class GetxSignUpPresenter extends GetxController implements SignUpPresenter {
     } on DomainError catch (error) {
       switch (error) {
         case DomainError.invalidCredentials:
-          _mainError.value = UiError.invalidCredentials;
+          _mainError.value = UIError.invalidCredentials;
           break;
         case DomainError.emailInUse:
-          _mainError.value = UiError.emailInUse;
+          _mainError.value = UIError.emailInUse;
           break;
         default:
-          _mainError.value = UiError.unexpected;
+          _mainError.value = UIError.unexpected;
       }
       _isLoading.value = false;
     }

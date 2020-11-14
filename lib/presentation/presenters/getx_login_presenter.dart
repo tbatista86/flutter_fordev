@@ -14,16 +14,16 @@ class GetxLoginPresenter extends GetxController implements LoginPresenter {
   final Authentication authentication;
   final SaveCurrentAccount saveCurrentAccount;
 
-  final _emailError = Rx<UiError>();
-  final _passwordError = Rx<UiError>();
-  final _mainError = Rx<UiError>();
+  final _emailError = Rx<UIError>();
+  final _passwordError = Rx<UIError>();
+  final _mainError = Rx<UIError>();
   final _navigateTo = RxString();
   final _isFormValid = false.obs;
   final _isLoading = false.obs;
 
-  Stream<UiError> get emailErrorStream => _emailError.stream;
-  Stream<UiError> get passwordErrorStream => _passwordError.stream;
-  Stream<UiError> get mainErrorStream => _mainError.stream;
+  Stream<UIError> get emailErrorStream => _emailError.stream;
+  Stream<UIError> get passwordErrorStream => _passwordError.stream;
+  Stream<UIError> get mainErrorStream => _mainError.stream;
   Stream<String> get navigateToStream => _navigateTo.stream;
   Stream<bool> get isFormValidStream => _isFormValid.stream;
   Stream<bool> get isLoadingStream => _isLoading.stream;
@@ -49,7 +49,7 @@ class GetxLoginPresenter extends GetxController implements LoginPresenter {
     _validateForm();
   }
 
-  UiError _validateField(String field) {
+  UIError _validateField(String field) {
     final formData = {
       'email': _email,
       'password': _password,
@@ -57,9 +57,9 @@ class GetxLoginPresenter extends GetxController implements LoginPresenter {
     final error = validation.validate(field: field, input: formData);
     switch (error) {
       case ValidationError.invalidField:
-        return UiError.invalidField;
+        return UIError.invalidField;
       case ValidationError.requiredField:
-        return UiError.requireField;
+        return UIError.requireField;
       default:
         return null;
     }
@@ -82,10 +82,10 @@ class GetxLoginPresenter extends GetxController implements LoginPresenter {
     } on DomainError catch (error) {
       switch (error) {
         case DomainError.invalidCredentials:
-          _mainError.value = UiError.invalidCredentials;
+          _mainError.value = UIError.invalidCredentials;
           break;
         default:
-          _mainError.value = UiError.unexpected;
+          _mainError.value = UIError.unexpected;
       }
       _isLoading.value = false;
     }

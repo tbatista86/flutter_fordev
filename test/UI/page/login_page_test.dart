@@ -14,17 +14,17 @@ class LoginPresenterSpy extends Mock implements LoginPresenter {}
 
 void main() {
   LoginPresenter presenter;
-  StreamController<UiError> emailErrorController;
-  StreamController<UiError> passwordErrorController;
-  StreamController<UiError> mainErrorController;
+  StreamController<UIError> emailErrorController;
+  StreamController<UIError> passwordErrorController;
+  StreamController<UIError> mainErrorController;
   StreamController<String> navigateToController;
   StreamController<bool> isFormValidController;
   StreamController<bool> isLoadingController;
 
   void initStreams() {
-    emailErrorController = StreamController<UiError>();
-    passwordErrorController = StreamController<UiError>();
-    mainErrorController = StreamController<UiError>();
+    emailErrorController = StreamController<UIError>();
+    passwordErrorController = StreamController<UIError>();
+    mainErrorController = StreamController<UIError>();
     navigateToController = StreamController<String>();
     isFormValidController = StreamController<bool>();
     isLoadingController = StreamController<bool>();
@@ -78,7 +78,7 @@ void main() {
     await loadPage(tester);
 
     final emailTextChildren = find.descendant(
-        of: find.bySemanticsLabel('Login'), matching: find.byType(Text));
+        of: find.bySemanticsLabel('Email'), matching: find.byType(Text));
     expect(
       emailTextChildren,
       findsOneWidget,
@@ -105,7 +105,7 @@ void main() {
     await loadPage(tester);
 
     final email = faker.internet.email();
-    await tester.enterText(find.bySemanticsLabel('Login'), email);
+    await tester.enterText(find.bySemanticsLabel('Email'), email);
     verify(presenter.validateEmail(email));
 
     final password = faker.internet.password();
@@ -117,7 +117,7 @@ void main() {
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    emailErrorController.add(UiError.invalidField);
+    emailErrorController.add(UIError.invalidField);
     await tester.pump();
 
     expect(find.text('Campo inválido.'), findsOneWidget);
@@ -127,7 +127,7 @@ void main() {
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    emailErrorController.add(UiError.requireField);
+    emailErrorController.add(UIError.requireField);
     await tester.pump();
 
     expect(find.text('Campo obrigatório.'), findsOneWidget);
@@ -142,7 +142,7 @@ void main() {
 
     expect(
       find.descendant(
-          of: find.bySemanticsLabel('Login'), matching: find.byType(Text)),
+          of: find.bySemanticsLabel('Email'), matching: find.byType(Text)),
       findsOneWidget,
     );
   });
@@ -151,7 +151,7 @@ void main() {
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    passwordErrorController.add(UiError.requireField);
+    passwordErrorController.add(UIError.requireField);
     await tester.pump();
 
     expect(find.text('Campo obrigatório.'), findsOneWidget);
@@ -236,7 +236,7 @@ void main() {
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    mainErrorController.add(UiError.invalidCredentials);
+    mainErrorController.add(UIError.invalidCredentials);
     await tester.pump();
 
     expect(find.text('Credencias inválidas.'), findsOneWidget);
@@ -246,7 +246,7 @@ void main() {
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    mainErrorController.add(UiError.unexpected);
+    mainErrorController.add(UIError.unexpected);
     await tester.pump();
 
     expect(find.text('Algo errado aconteceu. Tente novamente em breve.'),

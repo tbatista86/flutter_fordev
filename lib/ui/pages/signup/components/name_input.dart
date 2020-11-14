@@ -7,7 +7,7 @@ class NameInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final presenter = Provider.of<SignUpPresenter>(context);
-    return StreamBuilder<UiError>(
+    return StreamBuilder<UIError>(
       stream: presenter.nameErrorStream,
       builder: (context, snapshot) {
         return TextFormField(

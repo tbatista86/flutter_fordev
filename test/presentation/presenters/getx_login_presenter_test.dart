@@ -78,7 +78,7 @@ void main() {
     mockValidation(value: ValidationError.invalidField);
 
     sut.emailErrorStream
-        .listen(expectAsync1((error) => expect(error, UiError.invalidField)));
+        .listen(expectAsync1((error) => expect(error, UIError.invalidField)));
     sut.isFormValidStream
         .listen(expectAsync1((isValid) => expect(isValid, false)));
 
@@ -90,7 +90,7 @@ void main() {
     mockValidation(value: ValidationError.requiredField);
 
     sut.emailErrorStream
-        .listen(expectAsync1((error) => expect(error, UiError.requireField)));
+        .listen(expectAsync1((error) => expect(error, UIError.requireField)));
     sut.isFormValidStream
         .listen(expectAsync1((isValid) => expect(isValid, false)));
 
@@ -121,7 +121,7 @@ void main() {
     mockValidation(value: ValidationError.requiredField);
 
     sut.passwordErrorStream
-        .listen(expectAsync1((error) => expect(error, UiError.requireField)));
+        .listen(expectAsync1((error) => expect(error, UIError.requireField)));
     sut.isFormValidStream
         .listen(expectAsync1((isValid) => expect(isValid, false)));
 
@@ -185,7 +185,7 @@ void main() {
     expectLater(sut.isLoadingStream, emitsInOrder([true, false]));
 
     sut.mainErrorStream
-        .listen(expectAsync1((error) => expect(error, UiError.unexpected)));
+        .listen(expectAsync1((error) => expect(error, UIError.unexpected)));
 
     await sut.auth();
   });
@@ -217,7 +217,7 @@ void main() {
     expectLater(sut.isLoadingStream, emitsInOrder([true, false]));
 
     sut.mainErrorStream.listen(
-        expectAsync1((error) => expect(error, UiError.invalidCredentials)));
+        expectAsync1((error) => expect(error, UIError.invalidCredentials)));
 
     await sut.auth();
   });
@@ -230,7 +230,7 @@ void main() {
     expectLater(sut.isLoadingStream, emitsInOrder([true, false]));
 
     sut.mainErrorStream
-        .listen(expectAsync1((error) => expect(error, UiError.unexpected)));
+        .listen(expectAsync1((error) => expect(error, UIError.unexpected)));
 
     await sut.auth();
   });

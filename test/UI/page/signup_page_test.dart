@@ -13,21 +13,21 @@ class SignUpPresenterSpy extends Mock implements SignUpPresenter {}
 
 void main() {
   SignUpPresenter presenter;
-  StreamController<UiError> nameErrorController;
-  StreamController<UiError> emailErrorController;
-  StreamController<UiError> mainErrorController;
-  StreamController<UiError> passwordErrorController;
-  StreamController<UiError> passwordConfirmationErrorController;
+  StreamController<UIError> nameErrorController;
+  StreamController<UIError> emailErrorController;
+  StreamController<UIError> mainErrorController;
+  StreamController<UIError> passwordErrorController;
+  StreamController<UIError> passwordConfirmationErrorController;
   StreamController<bool> isFormValidController;
   StreamController<bool> isLoadingController;
   StreamController<String> navigateToController;
 
   void initStreams() {
-    nameErrorController = StreamController<UiError>();
-    emailErrorController = StreamController<UiError>();
-    mainErrorController = StreamController<UiError>();
-    passwordErrorController = StreamController<UiError>();
-    passwordConfirmationErrorController = StreamController<UiError>();
+    nameErrorController = StreamController<UIError>();
+    emailErrorController = StreamController<UIError>();
+    mainErrorController = StreamController<UIError>();
+    passwordErrorController = StreamController<UIError>();
+    passwordConfirmationErrorController = StreamController<UIError>();
     isFormValidController = StreamController<bool>();
     isLoadingController = StreamController<bool>();
     navigateToController = StreamController<String>();
@@ -151,11 +151,11 @@ void main() {
   testWidgets('Should present email error', (WidgetTester tester) async {
     await loadPage(tester);
 
-    emailErrorController.add(UiError.invalidField);
+    emailErrorController.add(UIError.invalidField);
     await tester.pump();
     expect(find.text('Campo inválido.'), findsOneWidget);
 
-    emailErrorController.add(UiError.requireField);
+    emailErrorController.add(UIError.requireField);
     await tester.pump();
     expect(find.text('Campo obrigatório.'), findsOneWidget);
 
@@ -171,11 +171,11 @@ void main() {
   testWidgets('Should present name error', (WidgetTester tester) async {
     await loadPage(tester);
 
-    nameErrorController.add(UiError.invalidField);
+    nameErrorController.add(UIError.invalidField);
     await tester.pump();
     expect(find.text('Campo inválido.'), findsOneWidget);
 
-    nameErrorController.add(UiError.requireField);
+    nameErrorController.add(UIError.requireField);
     await tester.pump();
     expect(find.text('Campo obrigatório.'), findsOneWidget);
 
@@ -191,11 +191,11 @@ void main() {
   testWidgets('Should present password error', (WidgetTester tester) async {
     await loadPage(tester);
 
-    passwordErrorController.add(UiError.invalidField);
+    passwordErrorController.add(UIError.invalidField);
     await tester.pump();
     expect(find.text('Campo inválido.'), findsOneWidget);
 
-    passwordErrorController.add(UiError.requireField);
+    passwordErrorController.add(UIError.requireField);
     await tester.pump();
     expect(find.text('Campo obrigatório.'), findsOneWidget);
 
@@ -212,11 +212,11 @@ void main() {
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    passwordConfirmationErrorController.add(UiError.invalidField);
+    passwordConfirmationErrorController.add(UIError.invalidField);
     await tester.pump();
     expect(find.text('Campo inválido.'), findsOneWidget);
 
-    passwordConfirmationErrorController.add(UiError.requireField);
+    passwordConfirmationErrorController.add(UIError.requireField);
     await tester.pump();
     expect(find.text('Campo obrigatório.'), findsOneWidget);
 
@@ -292,7 +292,7 @@ void main() {
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    mainErrorController.add(UiError.emailInUse);
+    mainErrorController.add(UIError.emailInUse);
     await tester.pump();
 
     expect(find.text('O email já está em uso.'), findsOneWidget);
@@ -302,7 +302,7 @@ void main() {
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    mainErrorController.add(UiError.unexpected);
+    mainErrorController.add(UIError.unexpected);
     await tester.pump();
 
     expect(find.text('Algo errado aconteceu. Tente novamente em breve.'),
