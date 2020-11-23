@@ -1,10 +1,10 @@
-import 'package:fordev/ui/pages/signup/signup_presenter.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 
 import '../../ui/helpers/errors/errors.dart';
-import '../../domain/usecases/usecases.dart';
+import '../../ui/pages/pages.dart';
 import '../../domain/helpers/helpers.dart';
+import '../../domain/usecases/usecases.dart';
 
 import '../protocols/protocols.dart';
 
@@ -110,14 +110,12 @@ class GetxSignUpPresenter extends GetxController implements SignUpPresenter {
       _navigateTo.value = '/surveys';
     } on DomainError catch (error) {
       switch (error) {
-        case DomainError.invalidCredentials:
-          _mainError.value = UIError.invalidCredentials;
-          break;
         case DomainError.emailInUse:
           _mainError.value = UIError.emailInUse;
           break;
         default:
           _mainError.value = UIError.unexpected;
+          break;
       }
       _isLoading.value = false;
     }
