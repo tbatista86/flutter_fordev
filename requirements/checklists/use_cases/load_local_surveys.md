@@ -5,7 +5,7 @@
 2. Sistema valida os dados recebidos do cache
 3. SIstema entreda os dados das enquetes
 
-> ## Exceção - Chache vazio
+> ## Exceção - Cache vazio
 1. Sistema retorna uma mensagem de erro inesperado
 
 > ## Exceção - Dados inválidos no cache
