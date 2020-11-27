@@ -4,7 +4,7 @@
 1. OK - Sistema faz requisição para a URL de API de surveys
 2. Sistema valida o token de acesso para saber se o usuário tem permissão para ver esses dados
 3. SIstema valida os dados recebidos da API
-4. Sistema entrega os dados da enquetes
+4. OK - Sistema entrega os dados da enquetes
 
 > ## Exceção - URL inválida
 1. Sistema retorna uma mensagem de erro inesperado
