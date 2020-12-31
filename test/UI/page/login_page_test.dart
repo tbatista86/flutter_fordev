@@ -73,33 +73,6 @@ void main() {
     closeStreams();
   });
 
-  testWidgets('Should load with correct initial state',
-      (WidgetTester tester) async {
-    await loadPage(tester);
-
-    final emailTextChildren = find.descendant(
-        of: find.bySemanticsLabel('Email'), matching: find.byType(Text));
-    expect(
-      emailTextChildren,
-      findsOneWidget,
-      reason:
-          'When a TextFormField has only one text child, means it has no erros, since one of the childs is always the hind label text',
-    );
-
-    final passwordTextChildren = find.descendant(
-        of: find.bySemanticsLabel('Senha'), matching: find.byType(Text));
-    expect(
-      passwordTextChildren,
-      findsOneWidget,
-      reason:
-          'When a TextFormField has only one text child, means it has no erros, since one of the childs is always the hind label text',
-    );
-
-    final button = tester.widget<RaisedButton>(find.byType(RaisedButton));
-    expect(button.onPressed, null);
-    expect(find.byType(CircularProgressIndicator), findsNothing);
-  });
-
   testWidgets('Should call validate with correct values',
       (WidgetTester tester) async {
     await loadPage(tester);
