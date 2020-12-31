@@ -1,7 +1,7 @@
 # Surveys Page
 
 > ## Regras
-1. Chamar o método listar enquetes ao carregar a tela
+1. OK - Chamar o método listar enquetes ao carregar a tela
 2. Exibir loading ao receber evendo de isLoading do presenter como true
 3. Exconder Loading ao receber evento de isLoading do presenter como false ou null
 4. Exibir mensagem de erro e esconder a lista ao receber evento de surveysData com erro
