@@ -8,5 +8,5 @@
 5. OK - Esconder mensagem de erro e exibir a lista ao receber evento de surveysData com dados
 6. OK - Mostrar a data e pergunta da enquete baseado no modele
 7. OK - Mostrar em vermelho as enquetes não respondidas e em verde as respondidas pelo usuário
-8. Chamar o método de Listar Enquetes ao clicar no boyão de recaregar
+8. OK - Chamar o método de Listar Enquetes ao clicar no boyão de recaregar
 9. Ir para tela de resultado da enquete ao clicar em alguma enquete
