@@ -31,5 +31,8 @@ class RemoteSurveyModel {
   }
 
   SurveyEntity toEntity() => SurveyEntity(
-      id: id, question: question, dateTime: date, didAnswer: didAnswer);
+      id: id,
+      question: question,
+      dateTime: DateTime.parse(date),
+      didAnswer: didAnswer);
 }

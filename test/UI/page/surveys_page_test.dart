@@ -12,23 +12,22 @@ class SurveysPresenterSpy extends Mock implements SurveysPresenter {}
 void main() {
   SurveysPresenterSpy presenter;
   StreamController<bool> isLoadingController;
-  StreamController<List<SurveyViewModel>> loadSurveysController;
+  StreamController<List<SurveyViewModel>> surveysController;
 
   void initStreams() {
     isLoadingController = StreamController<bool>();
-    loadSurveysController = StreamController<List<SurveyViewModel>>();
+    surveysController = StreamController<List<SurveyViewModel>>();
   }
 
   void mockStreams() {
     when(presenter.isLoadingStream)
         .thenAnswer((_) => isLoadingController.stream);
-    when(presenter.loadSurveysStream)
-        .thenAnswer((_) => loadSurveysController.stream);
+    when(presenter.surveysStream).thenAnswer((_) => surveysController.stream);
   }
 
   void closeStreams() {
     isLoadingController.close();
-    loadSurveysController.close();
+    surveysController.close();
   }
 
   Future<void> loadPage(WidgetTester tester) async {
@@ -90,11 +89,11 @@ void main() {
     expect(find.byType(CircularProgressIndicator), findsNothing);
   });
 
-  testWidgets('Should present error if loadSurveysStream fails',
+  testWidgets('Should present error if surveysStream fails',
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    loadSurveysController.addError(UIError.unexpected.description);
+    surveysController.addError(UIError.unexpected.description);
     await tester.pump();
 
     expect(find.text('Algo errado aconteceu. Tente novamente em breve.'),
@@ -103,11 +102,11 @@ void main() {
     expect(find.text('Question 1'), findsNothing);
   });
 
-  testWidgets('Should present list if loadSurveysStream success',
+  testWidgets('Should present list if surveysStream success',
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    loadSurveysController.add(makeSurveys());
+    surveysController.add(makeSurveys());
     await tester.pump();
 
     expect(find.text('Algo errado aconteceu. Tente novamente em breve.'),
@@ -123,7 +122,7 @@ void main() {
       (WidgetTester tester) async {
     await loadPage(tester);
 
-    loadSurveysController.addError(UIError.unexpected.description);
+    surveysController.addError(UIError.unexpected.description);
     await tester.pump();
     await tester.tap(find.text('Recarregar'));
 
