@@ -2,7 +2,7 @@
 
 > ## Caso de Sucesso 
 1. OK - Sistema faz requisição para a URL de API de surveys
-2. Sistema valida o token de acesso para saber se o usuário tem permissão para ver esses dados
+2. OK - Sistema valida o token de acesso para saber se o usuário tem permissão para ver esses dados
 3. OK - Sistema valida os dados recebidos da API
 4. OK - Sistema entrega os dados da enquetes
 
