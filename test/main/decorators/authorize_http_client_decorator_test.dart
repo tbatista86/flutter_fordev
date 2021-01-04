@@ -30,6 +30,8 @@ class AuthorizeHttpClientDecorator implements HttpClient {
         body: body,
         headers: authorizesHeaders,
       );
+    } on HttpError {
+      rethrow;
     } catch (error) {
       throw HttpError.forbidden;
     }
@@ -64,14 +66,22 @@ void main() {
     mockTokenCall().thenThrow(Exception());
   }
 
-  void mockHttpResponse() {
-    httpResponse = faker.randomGenerator.string(50);
-    when(httpClient.request(
+  PostExpectation mockHttpResponseCall() {
+    return when(httpClient.request(
       url: anyNamed('url'),
       method: anyNamed('method'),
       body: anyNamed('body'),
       headers: anyNamed('headers'),
-    )).thenAnswer((_) async => httpResponse);
+    ));
+  }
+
+  void mockHttpResponse() {
+    httpResponse = faker.randomGenerator.string(50);
+    mockHttpResponseCall().thenAnswer((_) async => httpResponse);
+  }
+
+  void mockHttpResponseError(HttpError erro) {
+    mockHttpResponseCall().thenThrow(erro);
   }
 
   setUp(() {
@@ -132,5 +142,12 @@ void main() {
     final future = sut.request(url: url, method: method, body: body);
 
     expect(future, throwsA(HttpError.forbidden));
+  });
+
+  test('Should rethrow if decoratee throws', () async {
+    mockHttpResponseError(HttpError.badRequest);
+    final future = sut.request(url: url, method: method, body: body);
+
+    expect(future, throwsA(HttpError.badRequest));
   });
 }
