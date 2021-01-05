@@ -1,7 +1,7 @@
 # Local Load Surveys
 
 > ## Caso de sucesso
-1. Sistema solicita os dados das enquetes do cache
+1. OK - Sistema solicita os dados das enquetes do cache
 2. Sistema entrega os dados das enquetes
 
 > ## Exceção - Cache vazio
