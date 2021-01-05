@@ -2,7 +2,7 @@
 
 > ## Caso de sucesso
 1. OK - Sistema solicita os dados das enquetes do cache
-2. Sistema entrega os dados das enquetes
+2. OK - Sistema entrega os dados das enquetes
 
 > ## Exceção - Cache vazio
 1. Sistema retorna uma mensagem de erro
