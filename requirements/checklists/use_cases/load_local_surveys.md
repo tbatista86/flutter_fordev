@@ -5,7 +5,7 @@
 2. OK - Sistema entrega os dados das enquetes
 
 > ## Exceção - Erro ao carregar dados do cache
-1. Sistema retorna uma mensagem de erro inesperado
+1. OK - Sistema retorna uma mensagem de erro inesperado
 
 > ## Exceção - Cache vazio
 1. OK - Sistema retorna uma mensagem de erro
