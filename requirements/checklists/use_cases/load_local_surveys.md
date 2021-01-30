@@ -33,7 +33,7 @@
 3. Sistema grava os novos dados no Cache
 
 > ## Exceção - Erro ao apagar os dados do Cache
-1. Sistema retorna uma mensagem de erro 
+1. Sistema retorna uma mensagem de erro inesperado
 
 > ## Eceção - Erro ao gravar dados no Cache
-1. Sistema retorna uma mensagem de erro 
+1. Sistema retorna uma mensagem de erro inesperado
