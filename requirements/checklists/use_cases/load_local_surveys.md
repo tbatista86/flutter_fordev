@@ -15,8 +15,11 @@
 # Local Validade Surveys
 
 > ## Caso de sucesso
-1. Sistema valida os dados recebidos do cache
+1. OK -Sistema solicita os dados das enquetes do Cache
+2. Sistema valida os dados recebidos do cache
 
+## Exeção - Erro ao carregar dados do Cache
+1. Sistema limpa os dados do cache
 > ## Exceção - Dados inválidos no cache
 1. Sistema limpa os dados do cache
 
