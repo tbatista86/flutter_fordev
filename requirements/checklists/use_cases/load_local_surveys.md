@@ -19,7 +19,7 @@
 2. OK - Sistema valida os dados recebidos do cache
 
 ## Exeção - Erro ao carregar dados do Cache
-1. Sistema limpa os dados do cache
+1. OK - Sistema limpa os dados do cache
 > ## Exceção - Dados inválidos no cache
 1. OK - Sistema limpa os dados do cache
 
