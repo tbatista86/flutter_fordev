@@ -31,4 +31,4 @@
 1. OK -  Sistema grava os novos dados no Cache
 
 > ## Eceção - Erro ao gravar dados no Cache
-1. Sistema retorna uma mensagem de erro inesperado
+1. OK - Sistema retorna uma mensagem de erro inesperado
