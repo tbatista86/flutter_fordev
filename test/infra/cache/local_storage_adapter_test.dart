@@ -40,7 +40,7 @@ void main() {
       expect(future, throwsA(TypeMatcher<Exception>()));
     });
 
-    test('Should throw if deleteItem throws', () async {
+    test('Should throw if setItem throws', () async {
       mockSaveError();
       final future = sut.save(key: key, value: value);
 
@@ -53,6 +53,13 @@ void main() {
       await sut.delete(key);
 
       verify(localStorage.deleteItem(key)).called(1);
+    });
+
+    test('Should throw if deleteItem throws', () async {
+      mockDeleteError();
+      final future = sut.delete(key);
+
+      expect(future, throwsA(TypeMatcher<Exception>()));
     });
   });
 }
