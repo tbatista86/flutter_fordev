@@ -1,8 +1,8 @@
 # Remote Load Surveys With Local FallBack
 
 > ## Caso de sucesso
-1. Sistema executa o load da implementação remota
-2. Sistema substitui os dados do cache com os dados obtidos
+1. OK - Sistema executa o load da implementação remota
+2. OK - Sistema substitui os dados do cache com os dados obtidos
 3. Sistema retorna esses dado
 
 > ## Exceção - Aceso negado
