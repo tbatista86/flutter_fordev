@@ -3,7 +3,7 @@
 > ## Caso de sucesso
 1. OK - Sistema executa o load da implementação remota
 2. OK - Sistema substitui os dados do cache com os dados obtidos
-3. Sistema retorna esses dado
+3. OK - Sistema retorna esses dado
 
 > ## Exceção - Aceso negado
 1. Sistema repassa a execeção de acesso negado
