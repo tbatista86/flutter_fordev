@@ -27,7 +27,7 @@ class LocalLoadSurveys implements LoadSurveys {
       final data = await cacheStorage.fetch('surveys');
       _mapToEntity(data);
     } catch (error) {
-      // await cacheStorage.delete('surveys');
+      await cacheStorage.delete('surveys');
     }
   }
 
