@@ -14,4 +14,4 @@
 3. OK - Sistema retorna esses dados
 
 > ## Execeção - Erro ao obter dados do cache
-1. Sistema retorna um execeção de erro inesperado
+1. OK - Sistema retorna um execeção de erro inesperado
