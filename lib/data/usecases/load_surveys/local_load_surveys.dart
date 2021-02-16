@@ -27,7 +27,7 @@ class LocalLoadSurveys implements LoadSurveys {
       final data = await cacheStorage.fetch('surveys');
       _mapToEntity(data);
     } catch (error) {
-      await cacheStorage.delete('surveys');
+      // await cacheStorage.delete('surveys');
     }
   }
 
@@ -39,7 +39,7 @@ class LocalLoadSurveys implements LoadSurveys {
     }
   }
 
-  List<SurveyEntity> _mapToEntity(List<Map> list) => list
+  List<SurveyEntity> _mapToEntity(dynamic list) => list
       .map<SurveyEntity>((json) => LocalSurveyModel.fromJson(json).toEntity())
       .toList();
 
