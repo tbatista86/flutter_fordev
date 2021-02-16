@@ -9,8 +9,8 @@
 1. OK - Sistema repassa a execeção de acesso negado
 
 > ## Exceção - QUalquer outro erro
-1. Sistema execuata o método de validar dados do cache
-2. Sistema execuata o método de carregar dados do cache
+1. OK - Sistema execuata o método de validar dados do cache
+2. OK - Sistema execuata o método de carregar dados do cache
 3. Sistema retorna esses dados
 
 > ## Execeção - Erro ao obter dados do cache
