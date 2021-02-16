@@ -11,7 +11,7 @@
 > ## Exceção - QUalquer outro erro
 1. OK - Sistema execuata o método de validar dados do cache
 2. OK - Sistema execuata o método de carregar dados do cache
-3. Sistema retorna esses dados
+3. OK - Sistema retorna esses dados
 
 > ## Execeção - Erro ao obter dados do cache
 1. Sistema retorna um execeção de erro inesperado
