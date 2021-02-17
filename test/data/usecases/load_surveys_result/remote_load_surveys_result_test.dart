@@ -20,13 +20,13 @@ void main() {
         'answers': [
           {
             'image': faker.internet.httpUrl(),
-            'anwer': faker.randomGenerator.string(20),
+            'answer': faker.randomGenerator.string(20),
             'percent': faker.randomGenerator.integer(100),
             'count': faker.randomGenerator.integer(1000),
             'isCurrentAccountAnswer': faker.randomGenerator.boolean(),
           },
           {
-            'anwer': faker.randomGenerator.string(20),
+            'answer': faker.randomGenerator.string(20),
             'percent': faker.randomGenerator.integer(100),
             'count': faker.randomGenerator.integer(1000),
             'isCurrentAccountAnswer': faker.randomGenerator.boolean(),
