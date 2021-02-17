@@ -21,7 +21,7 @@ class App extends StatelessWidget {
       title: '4dev',
       debugShowCheckedModeBanner: false,
       theme: makeAppTheme(),
-      initialRoute: '/',
+      initialRoute: '/surveys_result/3',
       getPages: [
         GetPage(name: '/', page: makeSplashPage, transition: Transition.fade),
         GetPage(
@@ -31,6 +31,8 @@ class App extends StatelessWidget {
             name: '/surveys',
             page: makeSurveysPage,
             transition: Transition.fadeIn),
+        GetPage(
+            name: '/surveys_result/:survey_id', page: makeSurveysResultPage),
       ],
     );
   }
