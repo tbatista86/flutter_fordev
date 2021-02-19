@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './components.dart';
 import '../survey_result.dart';
 
 class SurveyResult extends StatelessWidget {
@@ -11,13 +12,7 @@ class SurveyResult extends StatelessWidget {
     return ListView.builder(
       itemBuilder: (context, index) {
         if (index == 0) {
-          return Container(
-            padding: EdgeInsets.only(top: 40, bottom: 20, left: 20, right: 20),
-            decoration: BoxDecoration(
-              color: Theme.of(context).disabledColor.withAlpha(80),
-            ),
-            child: Text(viewModel.question),
-          );
+          return SurveyHeader(viewModel.question);
         }
         return Column(
           children: [
@@ -63,32 +58,6 @@ class SurveyResult extends StatelessWidget {
         );
       },
       itemCount: viewModel.answers.length + 1,
-    );
-  }
-}
-
-class ActiveIcon extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 10),
-      child: Icon(
-        Icons.check_circle,
-        color: Theme.of(context).highlightColor,
-      ),
-    );
-  }
-}
-
-class DisabledIcon extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 10),
-      child: Icon(
-        Icons.check_circle,
-        color: Theme.of(context).disabledColor,
-      ),
     );
   }
 }
