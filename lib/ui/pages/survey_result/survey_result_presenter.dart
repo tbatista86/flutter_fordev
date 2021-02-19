@@ -1,5 +1,7 @@
+import './survey_result.dart';
+
 abstract class SurveyResultPresenter {
   Stream<bool> get isLoadingStream;
-  Stream<dynamic> get surveysResultStream;
+  Stream<SurveyResultViewModel> get surveysResultStream;
   Future<void> loadData();
 }
