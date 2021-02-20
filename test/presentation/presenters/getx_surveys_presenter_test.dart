@@ -81,4 +81,10 @@ void main() {
             (error) => expect(error, UIError.unexpected.description)));
     await sut.loadData();
   });
+
+  test('Should go to SurveyResultPage survey click', () async {
+    sut.navigateToStream.listen(
+        expectAsync1((page) => expect(page, '/survey_result/any_route')));
+    sut.gotoSurveyResult('any_route');
+  });
 }
