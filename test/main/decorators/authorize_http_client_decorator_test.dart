@@ -8,10 +8,14 @@ import 'package:fordev/data/http/http.dart';
 class FetchSecureCacheStorageSpy extends Mock
     implements FetchSecureCacheStorage {}
 
+class DeleteSecureCacheStorageSpy extends Mock
+    implements DeleteSecureCacheStorage {}
+
 class HttpClientSpy extends Mock implements HttpClient {}
 
 void main() {
   FetchSecureCacheStorageSpy fetchSecureCacheStorage;
+  DeleteSecureCacheStorageSpy deleteSecureCacheStorage;
   HttpClientSpy httpClient;
   AuthorizeHttpClientDecorator sut;
   String url;
@@ -53,9 +57,11 @@ void main() {
 
   setUp(() {
     fetchSecureCacheStorage = FetchSecureCacheStorageSpy();
+    deleteSecureCacheStorage = DeleteSecureCacheStorageSpy();
     httpClient = HttpClientSpy();
     sut = AuthorizeHttpClientDecorator(
       fetchSecureCacheStorage: fetchSecureCacheStorage,
+      deleteSecureCacheStorage: deleteSecureCacheStorage,
       decoratee: httpClient,
     );
     url = faker.internet.httpUrl();
@@ -109,6 +115,7 @@ void main() {
     final future = sut.request(url: url, method: method, body: body);
 
     expect(future, throwsA(HttpError.forbidden));
+    verify(deleteSecureCacheStorage.deleteSecure('token')).called(1);
   });
 
   test('Should rethrow if decoratee throws', () async {
