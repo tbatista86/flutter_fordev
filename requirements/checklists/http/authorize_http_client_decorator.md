@@ -13,4 +13,4 @@
 1. OK - Retornar a mesma exceção recebida
 ## Exceção - HttpCliente retornou alguma exeção 
 1. OK - Retornan a mesma exeção recebida
-2. Apagar token de acesso do cache
+2. OK - Apagar token de acesso do cache
