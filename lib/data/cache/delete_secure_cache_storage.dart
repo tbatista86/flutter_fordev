@@ -1,5 +1,5 @@
 abstract class DeleteSecureCacheStorage {
-  Future<void> deleteSecure(
+  Future<void> delete(
     String key,
   );
 }
